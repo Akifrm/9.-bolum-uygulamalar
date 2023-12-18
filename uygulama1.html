@@ -90,11 +90,11 @@
             display: none;
         }
 
-        @media (max-width: 992px) {
+        .active {
+            display: block;
+        }
 
-            #bg-blue {
-                display: none;
-            }
+        @media (max-width: 992px) {
 
             img {
                 display: inline;
@@ -176,6 +176,11 @@
             .kapsayici {
                 display: inline;
             }
+
+            .active {
+                display: none;
+            }
+
         }
 
         @media (max-width: 480px) {
@@ -194,8 +199,8 @@
                 <img src="https://storage.acerapps.io/app-1244/public/20221014/logo-purple.png" />
             </div>
             <div id="buttons">
-                <a class="click" onclick="test()"><i class="fa-solid fa-bars" id="button"></i></a>
-                <a class="click" onclick="test2()"><i class="fa-solid fa-x" id="button1" style="padding:0 2px;"></i></a>
+                <a class="click" onclick="test()"><i class="fa-solid fa-x" id="button" style="padding:0 2px;"></i></a>
+                <a class="click" onclick="test2()"><i class="fa-solid fa-bars" id="button1"></i></a>
             </div>
         </div>
         <div id="bg-blue">
@@ -238,7 +243,7 @@
 
             btn.style.display = 'none';
             btn2.style.display = 'flex';
-            menu.style.display = 'block';
+            menu.classList.remove('active');
         }
 
         function test2() {
@@ -246,9 +251,9 @@
             const btn2 = document.getElementById('button1');
             const menu = document.getElementById('bg-blue');
 
-            btn2.style.display = 'none';
             btn.style.display = 'flex';
-            menu.style.display = 'none';
+            btn2.style.display = 'none';
+            menu.classList.add('active');
         }
     </script>
 </body>

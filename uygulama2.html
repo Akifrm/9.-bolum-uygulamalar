@@ -171,6 +171,14 @@
             padding: 0;
         }
 
+        .active2 {
+            display: block;
+        }
+
+        .deactive2 {
+            display: none;
+        }
+
         @media (max-width:1200px) {
             #padding {
                 padding: 20px 3.7rem;
@@ -225,6 +233,11 @@
                 display: flex;
                 justify-content: space-between;
             }
+
+            .active2 {
+                display: block;
+            }
+
         }
     </style>
 </head>
@@ -236,14 +249,14 @@
                 <img src="https://storage.acerapps.io/app-1176/Digimondi/images/Logo.png" class="logo"
                     alt="DigiMondi Logo">
             </div>
-            <div id="buttons">
+            <div id="buttons" class="deactive2">
                 <a class="click" onclick="test()"><i class="fa-solid fa-bars" id="button"></i></a>
                 <a class="click" onclick="test2()"><i class="fa-solid fa-x" id="button1" style="padding:0 2px;"></i></a>
             </div>
         </header>
-        <div id="menu">
+        <div id="menu" class="active2">
             <ul id="menu-1">
-                <div id="buttons2">
+                <div id="buttons2" class="deactive2">
                     <a class="click" onclick="test2()">
                         <i class="fa-solid fa-x" id="button2" style="padding:0 2px;"></i>
                     </a>
@@ -318,7 +331,7 @@
 
             btn.style.display = 'none';
             btn2.style.display = 'flex';
-            menu.style.display = 'flex';
+            menu.classList.add('active2');
             hizmet.classList.remove('hizmetlerimiz');
             click.onclick = test3;
         }
@@ -328,9 +341,9 @@
             const btn2 = document.getElementById('button2');
             const menu = document.getElementById('menu');
 
-            btn2.style.display = 'none';
             btn.style.display = 'flex';
-            menu.style.display = 'none';
+            btn2.style.display = 'none';
+            menu.classList.remove('active2');
         }
 
         let a = true;
