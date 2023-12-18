@@ -24,7 +24,7 @@
 
         #padding {
             position: relative;
-            height: 100vh;
+            height: 100%;
             padding: 4rem;
         }
 
@@ -32,8 +32,9 @@
             list-style-type: none;
         }
 
-        #menu {
-            height: 160px;
+        #menu-1 {
+            display: inline-block;
+            font-size: 14px;
         }
 
         #menu-1 li {
@@ -46,30 +47,80 @@
 
         }
 
-        #menu-1 li a:hover .deactive {
-            margin-right: 24px;
-            display: inline-block;
+        .menu-2 {
+            text-align: center;
+            font-size: 14px;
+            position: absolute;
+            top: 35px;
+            left: 13rem;
+            width: 16rem;
+            height: 288px;
+            padding: 0 1rem;
+            background: linear-gradient(90deg, rgb(84, 11, 101, .95) 20%, rgb(27, 82, 127, .95) 85%);
+            border-radius: 15px;
+            display: none;
         }
 
-        #menu-1 li .hizmetlerimiz:hover .menu-2 {
+        .hizmetlerimiz2 {
+            padding-right: 10px;
+        }
+
+        #menu-1 li a {
+            transition: all 0.3s ease-out;
+            opacity: .6;
+        }
+
+        #menu-1 li a:hover {
+            opacity: 1;
+        }
+
+        .menu-2 li a {
+            opacity: .6;
+            transition: all 0.3s ease-out;
+        }
+
+        .menu-2 li a:hover {
+            opacity: 1;
+        }
+
+
+        #menu-1 .hizmetlerimiz:hover .menu-2 {
             display: block;
             background-color: red;
         }
 
-        .menu-2 {
-            display: none;
-            position: absolute;
-            top: 35px;
-            left: 15rem;
-            width: 16rem;
-            height: 288px;
-            padding: 1rem;
-            background: linear-gradient(90deg, rgb(84, 11, 101, .95) 20%, rgb(27, 82, 127, .95) 85%);
+        #menu-1 .hizmetlerimiz:hover .deactive {
+            display: inline-block;
         }
 
+        #menu-1 li .anasayfa {
+            opacity: 1;
+        }
 
-        .deactive {
-            display: none;
+        #menu-1 li span::before {
+            content: "";
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        #menu-1 li .active::before {
+            margin-right: 24px;
+            opacity: 1;
+        }
+
+        #menu-1 li .deactive:hover::before {
+            opacity: 1;
+            margin-right: 24px;
+        }
+
+        .container:hover .deactive::before {
+            opacity: 1;
+            margin-right: 24px;
         }
 
         @media (max-width:1124) {
@@ -85,29 +136,42 @@
     <div id="padding">
         <div id="menu">
             <ul id="menu-1">
-                <li><a href="#"><i class="fa-solid fa-circle"></i><span class="active">Anasayfa</span></a></li>
-                <li><a href="#"><i class="fa-solid fa-circle deactive"></i>Hakkımızda</a></li>
-                <li>
-                    <a href="#" class="hizmetlerimiz">
-                        <i class="fa-solid fa-circle deactive"></i>
-                        Hizmetlerimiz
-                        <i class="fa-solid fa-angle-right"></i>
+                <li><a href="#" class="anasayfa"><span class="active">Anasayfa</span></a></li>
+                <li><a href="#"><span class="deactive">Hakkımızda</span></a></li>
+                <li class="hizmetlerimiz">
+                    <a href="#">
+                        <span class="deactive hizmetlerimiz2">Hizmetlerimiz <i
+                                class="fa-solid fa-angle-right"></i></span>
                     </a>
-                    <div class="Services_Main">
-                        <ul class="menu-2">
-                            <li><a href="#" class="menu-2-items">Web tasarım</a></li>
-                            <li><a href="#" class="menu-2-items">IP Sanal Santral</a></li>
-                            <li><a href="#" class="menu-2-items">Whatsapp Reklam</a></li>
-                            <li><a href="#" class="menu-2-items">Yazılım</a></li>
-                            <li><a href="#" class="menu-2-items">Sosyal Medya Yönetimi</a></li>
-                            <li><a href="#" class="menu-2-items">Web Site Yönetimi</a></li>
-                            <li><a href="#" class="menu-2-items">Editoryal Çalışmalar</a></li>
-                            <li><a href="#" class="menu-2-items">SEO</a></li>
-                        </ul>
-                    </div>
+                    <ul class="menu-2">
+                        <li>
+                            <a href="#" class="menu-2-items">Web tasarım</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">IP Sanal Santral</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">Whatsapp Reklam</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">Yazılım</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">Sosyal Medya Yönetimi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">Web Site Yönetimi</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">Editoryal Çalışmalar</a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-2-items">SEO</a>
+                        </li>
+                    </ul>
                 </li>
-                <li><a href="#"><i class="fa-solid fa-circle deactive"></i>Blog</a></li>
-                <li><a href="#"><i class="fa-solid fa-circle deactive"></i>İletişim</a></li>
+                <li><a href="#"><span class="deactive">Blog</span></a></li>
+                <li><a href="#"><span class="deactive">İletişim</span></a></li>
             </ul>
         </div>
     </div>

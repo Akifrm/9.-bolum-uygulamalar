@@ -61,6 +61,10 @@
             display: block;
         }
 
+        .li-res:hover>#main-ul .main-li .main-a {
+            border-bottom: 3px solid skyblue;
+        }
+
         #main-ul {
             display: flex;
             width: 100%;
@@ -85,7 +89,7 @@
         }
 
         #main-ul .main-li .main-a:hover {
-            border-bottom: 3px solid skyblue;
+            border-bottom: 3px solid #009ee3;
         }
 
         .altmenu {
@@ -98,10 +102,16 @@
             display: none;
             font-weight: 600;
             font-size: 12px;
+            text-align: center;
+            left: -40px;
         }
 
-        .altmenu li:hover #main-a {
-            border-bottom: 3px solid skyblue;
+        .uyelik {
+            left: -65px;
+        }
+
+        .egitim {
+            left: -65px;
         }
 
         .altmenu li {
@@ -115,14 +125,12 @@
             padding: 0.75rem 0;
             text-decoration: none;
             color: blue;
-            text-align: center;
         }
 
         .altmenu li a:hover {
             color: white;
             background-color: blue;
         }
-
 
         #search {
             display: inline-flex;
@@ -165,7 +173,7 @@
                     </li>
                     <li class="main-li li-res">
                         <a href="#" class="main-a">ÜYELİK</a>
-                        <ul class="altmenu">
+                        <ul class="altmenu uyelik">
                             <li><a href="#">ÜYELİK ŞARTLARI</a></li>
                             <li><a href="#">ÜYE LİSTESİ</a></li>
                             <li><a href="#">ÜYE BAŞVURUSU</a></li>
@@ -176,7 +184,7 @@
                     </li>
                     <li class="main-li li-res">
                         <a href="#" class="main-a">EĞİTİM</a>
-                        <ul class="altmenu">
+                        <ul class="altmenu egitim">
                             <li><a>TS EN ISO 14046 Su Ayak İzi Eğitimİ</a></li>
                             <li><a>TS EN ISO 14067 ÜRÜN KARBON AYAK İZİ</a></li>
                             <li><a>KİMYASAL DEĞERLENDİRME UZMANI (KDU)</a></li>
