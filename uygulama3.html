@@ -38,12 +38,11 @@
         }
 
         #logo {
-            display: block;
+            display: flex;
             width: 229px;
             height: 59px;
             background: transparent url("https://storage.acerapps.io/app-13/public/20220525/logo.png") center center no-repeat;
             font-size: 0;
-            color: rgba(0, 0, 0, 0);
             background-size: 100%;
             align-self: center;
         }
@@ -59,10 +58,6 @@
 
         .li-res:hover .altmenu {
             display: block;
-        }
-
-        .li-res:hover>#main-ul .main-li .main-a {
-            border-bottom: 3px solid skyblue;
         }
 
         #main-ul {
@@ -132,6 +127,12 @@
             background-color: blue;
         }
 
+        .altmenu li a {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
         #search {
             display: inline-flex;
         }
@@ -139,12 +140,115 @@
         .fa-search {
             color: black;
         }
+
+        #buttons {
+            position: absolute;
+            display: none;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        .fa-bars,
+        .fa-x {
+            font-size: 2rem;
+        }
+
+        .click {
+            cursor: pointer;
+        }
+
+        @media (max-width: 1200px) {
+            #navbar {
+                justify-content: center;
+            }
+
+            #main-ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            #buttons {
+                display: flex;
+            }
+
+            .fa-x {
+                display: none;
+            }
+
+            #main-ul {
+                width: 220px;
+                background-color: #0d2c5d;
+                flex-direction: column;
+            }
+
+            #main-ul .main-li {
+                border-bottom: 1px solid #203a63;
+
+            }
+
+            #main-ul .main-li .main-a {
+                border: 0;
+            }
+
+            #main-ul .main-li .main-a:hover {
+                border: 0;
+            }
+
+            .fa-search {
+                display: none;
+            }
+
+            #main-ul .main-li {
+                display: block;
+                padding: 0;
+            }
+
+            #main-ul .main-li .main-a {
+                color: white;
+                display: block;
+                padding: 17px;
+            }
+
+            .altmenu {
+                padding: 0;
+                margin: 0;
+                position: static;
+                background-color: #0d2c5d;
+                color: white;
+                font-size: 16px;
+            }
+
+            .altmenu li {
+                border: 0;
+                width: auto;
+            }
+
+            .altmenu li a {
+                display: flex;
+                color: white;
+                border-bottom: 1px solid #203a63;
+                padding: 17px;
+            }
+
+            .altmenu li a:hover {
+                background: linear-gradient(rgb(2, 37, 111), rgb(24, 67, 158));
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="main">
         <div class="container">
+            <div id="buttons">
+                <a class="click" onclick="test()"><i class="fa-solid fa-bars" id="button"></i></a>
+            </div>
             <nav id="navbar">
                 <a href="" id="logo"></a>
                 <ul id="main-ul">
@@ -185,11 +289,11 @@
                     <li class="main-li li-res">
                         <a href="#" class="main-a">EĞİTİM</a>
                         <ul class="altmenu egitim">
-                            <li><a>TS EN ISO 14046 Su Ayak İzi Eğitimİ</a></li>
-                            <li><a>TS EN ISO 14067 ÜRÜN KARBON AYAK İZİ</a></li>
-                            <li><a>KİMYASAL DEĞERLENDİRME UZMANI (KDU)</a></li>
-                            <li><a>GÜVENLİK BİLGİ FORMU HAZIRLAYICILARI (GBF)</a></li>
-                            <li><a>TS EN ISO 14064-1:2019 Kurumsal Karbon Ayak İzi Hesaplama Eğitimi</a></li>
+                            <li><a href="#">TS EN ISO 14046 Su Ayak İzi Eğitimİ</a></li>
+                            <li><a href="#">TS EN ISO 14067 ÜRÜN KARBON AYAK İZİ</a></li>
+                            <li><a href="#">KİMYASAL DEĞERLENDİRME UZMANI (KDU)</a></li>
+                            <li><a href="#">GÜVENLİK BİLGİ FORMU HAZIRLAYICILARI (GBF)</a></li>
+                            <li><a href="#">TS EN ISO 14064-1:2019 Kurumsal Karbon Ayak İzi Hesaplama Eğitimi</a></li>
                         </ul>
                     </li>
                     <li class="main-li">
@@ -202,6 +306,13 @@
             </nav>
         </div>
     </div>
+    <script>
+        function test() {
+            const menu = document.getElementById('main-ul');
+
+            menu.style.display = 'block';
+        }
+    </script>
 </body>
 
 </html>
