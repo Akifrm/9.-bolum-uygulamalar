@@ -203,7 +203,7 @@
                 <a class="click" onclick="test2()"><i class="fa-solid fa-bars" id="button1"></i></a>
             </div>
         </div>
-        <div id="bg-blue">
+        <div id="bg-blue" class="active">
             <div id="container">
                 <ul id="menu">
                     <li><a href="#">Home</a></li>
@@ -243,7 +243,7 @@
 
             btn.style.display = 'none';
             btn2.style.display = 'flex';
-            menu.classList.remove('active');
+            menu.classList.add('active');
         }
 
         function test2() {
@@ -253,7 +253,7 @@
 
             btn.style.display = 'flex';
             btn2.style.display = 'none';
-            menu.classList.add('active');
+            menu.classList.remove('active');
         }
     </script>
 </body>
