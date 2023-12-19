@@ -157,6 +157,20 @@
             cursor: pointer;
         }
 
+        .kapat {
+            color: red !important;
+            text-align: center;
+        }
+
+        .deactive {
+            display: none !important;
+        }
+
+        .body {
+            display: none;
+            width: 100%;
+        }
+
         @media (max-width: 1200px) {
             #navbar {
                 justify-content: center;
@@ -239,6 +253,21 @@
             .altmenu li a:hover {
                 background: linear-gradient(rgb(2, 37, 111), rgb(24, 67, 158));
             }
+
+            .deactive {
+                display: block !important;
+            }
+
+            .deactive2 {
+                display: block !important;
+            }
+
+            .body {
+                position: absolute;
+                width: calc(100% - 220px);
+                left: 220px;
+                height: 100%;
+            }
         }
     </style>
 </head>
@@ -299,18 +328,34 @@
                     <li class="main-li">
                         <a href="#" class="main-a">İLETİŞİM</a>
                     </li>
+                    <li class="main-li">
+                        <a onclick="test2()" class="click main-a kapat deactive">KAPAT</a>
+                    </li>
                     <div id="search">
                         <a href="#"><i class="fas fa-search"></i></a>
                     </div>
                 </ul>
+                <div class="click body" id="body" onclick="test2()">
+                    
+                </div>
             </nav>
         </div>
     </div>
     <script>
         function test() {
             const menu = document.getElementById('main-ul');
+            const body = document.getElementById('body');
 
-            menu.style.display = 'block';
+            menu.classList.add('deactive2');
+            body.classList.add('deactive');
+        }
+
+        function test2() {
+            const menu = document.getElementById('main-ul');
+            const body = document.getElementById('body');
+
+            menu.classList.remove('deactive2');
+            body.classList.remove('deactive');
         }
     </script>
 </body>

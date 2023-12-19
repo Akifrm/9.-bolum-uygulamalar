@@ -64,7 +64,7 @@
             text-align: center;
             font-size: 16px;
             position: absolute;
-            top: 115px;
+            top: 7.5rem;
             left: 13rem;
             width: 16rem;
             padding: 0 1rem;
@@ -86,6 +86,10 @@
             opacity: 1;
         }
 
+        .menu-2 li {
+            padding: 0.25rem;
+        }
+
         .menu-2 li a {
             opacity: .6;
             transition: all 0.3s ease-out;
@@ -96,8 +100,7 @@
         }
 
         #menu-1 .hizmetlerimiz:hover .menu-2 {
-            display: block;
-            background-color: red;
+            display: block !important;
         }
 
         #menu-1 .hizmetlerimiz:hover .deactive {
@@ -172,11 +175,15 @@
         }
 
         .active2 {
-            display: block;
+            display: flex;
         }
 
         .deactive2 {
             display: none;
+        }
+
+        .deactive3 {
+            display: none !important;
         }
 
         @media (max-width:1200px) {
@@ -220,6 +227,10 @@
                 font-size: 2rem;
             }
 
+            #menu-1 .hizmetlerimiz:hover .menu-2 {
+                display: none !important;
+            }
+
             #img2 {
                 display: flex;
                 justify-content: center;
@@ -235,9 +246,20 @@
             }
 
             .active2 {
-                display: block;
+                display: none;
             }
 
+            .deactive2 {
+                display: flex;
+            }
+
+            .deactive3 {
+                display: block !important;
+            }
+
+            .deactive4 {
+                display: flex !important;
+            }
         }
     </style>
 </head>
@@ -250,15 +272,16 @@
                     alt="DigiMondi Logo">
             </div>
             <div id="buttons" class="deactive2">
-                <a class="click" onclick="test()"><i class="fa-solid fa-bars" id="button"></i></a>
-                <a class="click" onclick="test2()"><i class="fa-solid fa-x" id="button1" style="padding:0 2px;"></i></a>
+                <a class="click deactive2" onclick="test()"><i class="fa-solid fa-bars" id="button"></i></a>
+                <a class="click deactive2" onclick="test2()"><i class="fa-solid fa-x" id="button1"
+                        style="padding:0 2px;"></i></a>
             </div>
         </header>
-        <div id="menu" class="active2">
+        <div id="menu">
             <ul id="menu-1">
                 <div id="buttons2" class="deactive2">
                     <a class="click" onclick="test2()">
-                        <i class="fa-solid fa-x" id="button2" style="padding:0 2px;"></i>
+                        <i class="fa-solid fa-x deactive2" id="button2" style="padding:0 2px;"></i>
                     </a>
                 </div>
                 <div id="img2">
@@ -326,13 +349,11 @@
             const btn = document.getElementById('button');
             const btn2 = document.getElementById('button2');
             const menu = document.getElementById('menu');
-            const hizmet = document.getElementById('hizmetlerimiz');
             const click = document.getElementById('clickler');
 
             btn.style.display = 'none';
             btn2.style.display = 'flex';
-            menu.classList.add('active2');
-            hizmet.classList.remove('hizmetlerimiz');
+            menu.classList.add('deactive4');
             click.onclick = test3;
         }
 
@@ -343,17 +364,17 @@
 
             btn.style.display = 'flex';
             btn2.style.display = 'none';
-            menu.classList.remove('active2');
+            menu.classList.remove('deactive4');
         }
 
         let a = true;
         function test3() {
             const hizmet = document.getElementById('menu-3');
             if (a === true) {
-                hizmet.style.display = 'block';
+                hizmet.classList.add('deactive3');
                 a = false;
             } else {
-                hizmet.style.display = 'none';
+                hizmet.classList.remove('deactive3');
                 a = true;
             }
         }
